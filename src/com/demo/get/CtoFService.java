@@ -7,6 +7,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 @Path("/ctofservice")
@@ -21,7 +22,7 @@ public class CtoFService {
 	 */
 	@Path("{c}")
 	@GET
-	@Produces("text/plain")
+	@Produces(MediaType.TEXT_PLAIN)
 	public String convertCtoFfromInput(@PathParam("c") Double c) {
 		Double fahrenheit;
 		Double celsius = c;
@@ -42,6 +43,7 @@ public class CtoFService {
 	 */
 	@Path("/query")
 	@GET
+	@Produces(MediaType.TEXT_PLAIN)
 	public Response getUsers(
 			@QueryParam("from") int from,
 			@QueryParam("to") int to,

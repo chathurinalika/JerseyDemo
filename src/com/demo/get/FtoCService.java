@@ -4,6 +4,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import org.json.JSONException;
@@ -20,7 +21,7 @@ public class FtoCService {
 	 * @throws JSONException
 	 */
 	@GET
-	@Produces("application/json")
+	@Produces(MediaType.APPLICATION_JSON)
 	public Response convertFtoC() throws JSONException {
  
 	  JSONObject jsonObject = new JSONObject();
@@ -36,7 +37,7 @@ public class FtoCService {
  	
 	/**
 	 * This method use to demo @GET with JSON including @PathParam
-	 * URI is - http://localhost:8080/JerseyDemo/demo/ftocservice/20
+	 * URI is - http://localhost:8080/JerseyDemo/demo/ftocservice/30
 	 * 
 	 * @param f
 	 * @return
@@ -44,7 +45,7 @@ public class FtoCService {
 	 */
 	@Path("{f}")
 	@GET
-	@Produces("application/json")
+	@Produces(MediaType.APPLICATION_JSON)
 	public Response convertFtoCfromInput(@PathParam("f") float f) throws JSONException {
  
 		JSONObject jsonObject = new JSONObject();
